@@ -121,17 +121,19 @@ func (s *Slack) TestHandler() {
 }
 
 func notifySlack(s *Slack, obj interface{}, action string) {
-	e := kbEvent.New(obj, action)
-	api := slack.New(s.Token)
-	attachment := prepareSlackAttachment(e, s)
+	//e := kbEvent.New(obj, action)
+	//api := slack.New(s.Token)
+	//attachment := prepareSlackAttachment(e, s)
+	//
+	//channelID, timestamp, err := api.PostMessage(s.Channel,
+	//	slack.MsgOptionAttachments(attachment),
+	//	slack.MsgOptionAsUser(true))
+	//if err != nil {
+	//	log.Printf("%s\n", err)
+	//	return
+	//}
 
-	channelID, timestamp, err := api.PostMessage(s.Channel,
-		slack.MsgOptionAttachments(attachment),
-		slack.MsgOptionAsUser(true))
-	if err != nil {
-		log.Printf("%s\n", err)
-		return
-	}
+	log.Printf("This is madfrog's trap, action:%s", action)
 
 	log.Printf("Message successfully sent to channel %s at %s", channelID, timestamp)
 }
