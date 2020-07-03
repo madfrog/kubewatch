@@ -4,6 +4,7 @@ metadata:
   name: kubewatch
   namespace: default
 spec:
+  serviceAccountName: kubewatch
   containers:
   - image: bitnami/kubewatch #using this image, its more stable and active
     imagePullPolicy: Always
@@ -12,7 +13,6 @@ spec:
     - name: config-volume
       mountPath: /root
   restartPolicy: Always
-  serviceAccountName: kubewatch
   volumes:
   - name: config-volume
     configMap:
