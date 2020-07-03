@@ -12,6 +12,7 @@ spec:
     - name: config-volume
       mountPath: /root
   restartPolicy: Always
+  serviceAccountName: kubewatch
   volumes:
   - name: config-volume
     configMap:
